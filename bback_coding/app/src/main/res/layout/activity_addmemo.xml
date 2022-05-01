@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="addViewModel"
+            type="com.jungdarry.bback_coding.viewmodel.AddViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="10dp"
+        android:background="@drawable/background_paper"
+        >
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:text="@string/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_tv_title"
+            android:fontFamily="@font/bmjua_ttf"
+            android:layout_marginStart="32dp"
+            android:textSize="26sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:theme="@style/EditTextTheme"
+            android:ems="10"
+            android:fontFamily="@font/bmjua_ttf"
+            android:text="@{addViewModel.currentTitle}"
+            android:id="@+id/home_edittext_title"
+            app:layout_constraintBottom_toBottomOf="@+id/add_tv_title"
+            app:layout_constraintTop_toTopOf="@+id/add_tv_title"
+            app:layout_constraintStart_toEndOf="@+id/add_tv_title"
+            android:layout_marginStart="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="32dp"/>
+
+        <TextView
+            android:text="@string/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_tv_content"
+            android:fontFamily="@font/bmjua_ttf"
+            android:textSize="26sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/add_tv_title"
+            app:layout_constraintStart_toStartOf="@+id/add_tv_title"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_content_len_tv"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/add_edittv_background"
+            app:layout_constraintEnd_toEndOf="@id/add_edittv_background"
+            android:fontFamily="@font/bmjua_ttf"
+            android:layout_marginBottom="5dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/add_edittv_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_tv_content"
+            app:layout_constraintBottom_toTopOf="@+id/add_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/border"
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/add_content_edittv"
+                android:gravity="top"
+                android:theme="@style/EditTextTheme"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:hint="내용을 입력해줘요"
+                android:textColor="@color/black_70"
+                android:fontFamily="@font/bmjua_ttf"
+                android:background="@null"
+                android:lineSpacingExtra="10dp"
+                />
+
+        </LinearLayout>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_secret_cb"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/secret_memo"
+            android:textColor="@color/black_70"
+            android:fontFamily="@font/bmjua_ttf"
+            android:textSize="17sp"
+            android:buttonTint="@color/black_70"
+            />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:id="@+id/add_pw_edittv"
+            android:hint="비밀번호 입력"
+            android:visibility="gone"
+            android:inputType="number"
+            app:layout_constraintStart_toEndOf="@id/add_secret_cb"
+            app:layout_constraintEnd_toStartOf="@id/add_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="20dp"
+            android:textSize="14sp"
+            android:background="@null"
+            android:maxLength="4"
+            android:textColor="@color/black_70"
+            android:fontFamily="@font/bmjua_ttf"
+            app:layout_constraintTop_toTopOf="@id/add_secret_cb"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/add_button"
+            android:text="@string/filldone"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@color/black_30"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/black_70"
+            android:fontFamily="@font/bmjua_ttf"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

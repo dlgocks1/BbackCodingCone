@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="memoViewModel"
+            type="com.jungdarry.bback_coding.viewmodel.MemoViewModel" />
+
+        <variable
+            name="mainViewModel"
+            type="com.jungdarry.bback_coding.viewmodel.MainViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent"
+            app:boxStrokeColor="@color/black_70"
+            app:counterEnabled="true"
+            app:counterMaxLength="10"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:helperText="@string/findtitleorcontent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginHorizontal="10dp"
+            android:paddingHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/main_searchview"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search_term_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="10"
+                android:text="@{mainViewModel.searchText}"
+                android:inputType="text"
+                android:layout_marginBottom="5dp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:id="@+id/main_radiogroup"
+            app:layout_constraintTop_toBottomOf="@id/main_searchview"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+            <RadioButton
+                android:id="@+id/main_radio_bt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="날짜 오름차순"
+                android:textSize="12sp"
+                android:fontFamily="@font/bmjua_ttf"
+                android:buttonTint="@color/black_70"
+                />
+            <RadioButton
+                android:id="@+id/main_radio_bt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="날짜 내림차순"
+                android:buttonTint="@color/black_70"
+                android:textSize="12sp"
+                android:fontFamily="@font/bmjua_ttf"
+                />
+        </RadioGroup>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/main_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/main_radiogroup"
+            app:layout_constraintBottom_toTopOf="@id/main_button"
+            tools:listitem="@layout/item_memo" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/main_button"
+            android:layout_width="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_height="50dp"
+            android:text="메모 추가"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+<!--        <TextView-->
+<!--            android:id="@+id/databinding_test"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="20sp"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/test_pl_bt"-->
+<!--            android:text="@{String.valueOf(myNumberViewModel.currentValue)}"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            />-->
+<!--        -->
+<!--        <TextView-->
+<!--            android:id="@+id/test_tv"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:text="Hello word"-->
+<!--            android:textSize="17sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/main_button" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/test_edittv"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/test_tv" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/test_pl_bt"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="더하기"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/test_edittv" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/test_mi_bt"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="빼기"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/test_edittv" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--        android:id="@+id/fab"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="bottom|end"-->
+    <!--        android:layout_marginEnd="@dimen/fab_margin"-->
+    <!--        android:layout_marginBottom="16dp"-->
+    <!--        app:srcCompat="@android:drawable/ic_dialog_email" />-->
+
+</layout>

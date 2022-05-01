@@ -1,0 +1,92 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+}
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.jungdarry.bback_coding"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+//        dataBinding true
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
+    implementation 'androidx.databinding:databinding-runtime:7.1.2'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // room
+    implementation "androidx.room:room-runtime:2.3.0"
+    kapt "androidx.room:room-compiler:2.3.0"
+    implementation "androidx.room:room-ktx:2.3.0"
+
+    def lifecycle_version = "2.5.0-alpha06"
+
+    // 뷰모델 라이브 싸이클 관련
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    // ViewModel utilities for Compose
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
+    // 라이브 데이터 - 옵저러 패턴 관련 - 즉 데이터의 변경사항을 알 수 있다.
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+
+    // optional - helpers for implementing LifecycleOwner in a Service
+    implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
+    // optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
+    implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
+
+
+    def rxjava_version = "3.1.4"
+    // Rx Java - 메인
+    implementation "io.reactivex.rxjava3:rxjava:$rxjava_version"
+
+    def rxkotlin_version = "3.0.1"
+    // Rx Kotlin - 추가된 것
+    implementation("io.reactivex.rxjava3:rxkotlin:$rxkotlin_version")
+
+    // Rx 안드로이드 - 안드로이드 쓰레드를 Rxjava의 스케줄러와 연결시킴
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+
+    // Rx binding -> edittext 등의 안드로이드 뷰 컴포넌트들과 연결
+    implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
+
+
+}
