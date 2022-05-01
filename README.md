@@ -1,4 +1,6 @@
 ## BbackCodingCone
+[**개발하는정대리 유투브**](https://www.youtube.com/c/%EA%B0%9C%EB%B0%9C%ED%95%98%EB%8A%94%EC%A0%95%EB%8C%80%EB%A6%AC)
+
 **제 1회 빡코딩콘 이벤트 과제**
 
 👩🏼‍💻화면구성:
@@ -40,4 +42,10 @@ MVVM구조와 ViewModel을 이용한 RoomDB 활용 법
 RxJava, RxKotlin, RxAndroid, Rxbinding에 대한 이해 및 처리
 
 ReactiveX의 비동기 처리에 대하여
+
+
+## 실행화면
+
+https://user-images.githubusercontent.com/14178811/166139857-0baee30d-de82-484a-89e9-22a0577bfcd2.mp4
+
 
