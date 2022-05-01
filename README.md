@@ -37,7 +37,7 @@
 
 [BaseActivity, BaseFragment를 사용하여 앱 간소화 및 중복코드 없애기](https://velog.io/@cksgodl/BaseActivity-BaseFragment%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EC%95%B1-%EA%B0%84%EC%86%8C%ED%99%94-%EB%B0%8F-%EC%A4%91%EB%B3%B5%EC%BD%94%EB%93%9C-%EC%97%86%EC%95%A0%EA%B8%B0)
 
-MVVM구조와 ViewModel을 이용한 RoomDB 활용 법
+[MVVM구조와 ViewModel을 이용한 RoomDB 활용 법](https://velog.io/@cksgodl/MVVM%EA%B5%AC%EC%A1%B0%EC%99%80-ViewModel%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-RoomDB-%ED%99%9C%EC%9A%A9-%EB%B2%95)
 
 RxJava, RxKotlin, RxAndroid, Rxbinding에 대한 이해 및 처리
 
