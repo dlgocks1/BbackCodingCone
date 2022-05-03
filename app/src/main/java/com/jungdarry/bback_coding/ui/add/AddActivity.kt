@@ -13,6 +13,9 @@ import com.jungdarry.bback_coding.memoDB.Memo
 import com.jungdarry.bback_coding.ui.BaseActivity
 import com.jungdarry.bback_coding.viewmodel.AddViewModel
 import com.jungdarry.bback_coding.viewmodel.MemoViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 

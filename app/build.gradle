@@ -88,5 +88,11 @@ dependencies {
     // Rx binding -> edittext 등의 안드로이드 뷰 컴포넌트들과 연결
     implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
 
+    // Coroutine Scope
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
+
+
+
+
 
 }
