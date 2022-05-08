@@ -31,19 +31,14 @@ class MemoRepository(application: Application) : ViewModel() {
     }
 
     fun insert(memo: Memo) {
+        // ViewModel에서 DB에 접근을 요청할 때 수행할 함수를 만들어둔다.주의할 점은 Room DB를 메인 스레드에서 접근하려 하면 크래쉬가 발생한다
         viewModelScope.launch(Dispatchers.IO) {
             try{
                 memoDao.insert(memo)
             } catch (e:java.lang.Exception){
-                // Repository 에서의 예외처리는 예외처리를 여기서 하기
+                // Repository 에서의 예외처리
             }
         }
-
-//        try {
-//            ViewModel에서 DB에 접근을 요청할 때 수행할 함수를 만들어둔다.주의할 점은 Room DB를 메인 스레드에서 접근하려 하면 크래쉬가 발생한다
-//            val thread = Thread(Runnable {
-//            thread.start()
-//        } catch (e: Exception) { }
     }
 
     fun delete(memo: Memo) {

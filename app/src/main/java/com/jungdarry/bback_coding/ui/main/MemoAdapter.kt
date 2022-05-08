@@ -96,6 +96,4 @@ class MemoAdapter(val memoItemClick: (Memo) -> Unit, val memoItemDeleteClick: (M
         }
         notifyDataSetChanged()
     }
-
-
 }
